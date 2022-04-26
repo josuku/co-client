@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
-import { Order } from '../../model/order';
-import { Product } from '../../model/product';
+import { Order } from '../../models/order';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'order-form',

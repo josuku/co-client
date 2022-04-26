@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Order } from '../../model/order';
+import { Order } from '../../models/order';
 
 @Component({
   selector: 'order-list',

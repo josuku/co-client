@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Product } from '../../model/product';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'product-form',
