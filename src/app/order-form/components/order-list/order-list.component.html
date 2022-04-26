@@ -1,0 +1,41 @@
+<div class="mb-3">
+    <h4>Orders:</h4>
+    <button class="btn btn-outline-primary" (click)="openModal(newOrderModal)">New Order</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ClientId</th>
+        <th scope="col">Date</th>
+        <th scope="col">Direction</th>
+        <th scope="col">Products</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let order of orders; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ order.clientId | number }}</td>
+        <td>{{ order.date }}</td>
+        <td>{{ order.direction }}</td>
+        <td><a href="##" [ngbPopover]="productsContent" popoverTitle="Product's Detail">{{ order.products.length }}</a></td>
+        <ng-template #productsContent>
+          <product-list [products]="order.products"></product-list>
+        </ng-template>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #newOrderModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Order</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <order-form (orderChanged)="orderChangedHandler($event)"></order-form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="saveAndClose()">Save</button>
+    </div>
+  </ng-template>
+  

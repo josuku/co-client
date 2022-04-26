@@ -1,0 +1,42 @@
+  <form>
+    <div class="mb-3">
+      <label for="clientId">ClientId</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="clientId" name="clientId" required
+              [(ngModel)]="model.clientId" (change)="onChange()">
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="date">Date</label>
+      <div class="input-group">
+        <input type="date"  class="form-control" id="date" name="date" required
+              [(ngModel)]="model.date" (change)="onChange()">
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="address">Direction</label>
+      <div class="input-group">
+        <input type="text"  class="form-control" id="address" name="address" required
+               [(ngModel)]="model.direction" (change)="onChange()">
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <p>Products</p>
+      <div class="form-group">
+        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+          <ngb-panel id="addProductPanel" title="Add Product">
+            <ng-template ngbPanelContent>
+              <product-form (productChanged)="productChangedHandler($event)"></product-form>
+              <div class="clearfix">
+                <button type="button" class="btn btn-outline-dark float-end" (click)="addProduct()">Add</button>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+      <product-list [products]="model.products"></product-list>
+    </div>
+  </form>

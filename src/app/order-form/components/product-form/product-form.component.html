@@ -1,0 +1,26 @@
+<div class="product-form">
+  <div class="mb-3">
+    <label for="productId">Id</label>
+    <div class="input-group">
+      <input type="number" class="form-control" id="productId" name="productId" required
+            [(ngModel)]="model.id" (change)="onChange()">
+    </div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="productQuantity">Quantity</label>
+    <div class="input-group">
+      <input type="number" class="form-control" id="productQuantity" name="productQuantity" required
+            [(ngModel)]="model.quantity" (change)="onChange()">
+     </div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="productCost">Cost</label>
+    <div class="input-group">
+      <input type="number" class="form-control" id="productCost" name="productCost" required
+            [(ngModel)]="model.cost" (change)="onChange()">
+      </div>
+  </div>
+</div> 
+  
