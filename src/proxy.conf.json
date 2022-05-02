@@ -1,0 +1,11 @@
+{
+    "/api/checkout": {
+      "target": "http://localhost:3001",
+      "secure": false
+    },
+
+    "/api/orders": {
+      "target": "http://localhost:3004",
+      "secure": false
+    }
+}
