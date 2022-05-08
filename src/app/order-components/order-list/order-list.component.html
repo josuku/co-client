@@ -4,22 +4,31 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">Id</th>
         <th scope="col">ClientId</th>
         <th scope="col">Date</th>
         <th scope="col">Direction</th>
+        <th scope="col">Total</th>
         <th scope="col">Products</th>
+        <th scope="col">Logistic</th>
+        <th scope="col">Confimed</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let order of orders; index as i">
-        <th scope="row">{{ i + 1 }}</th>
+        <th scope="row">{{ order.id }}</th>
         <td>{{ order.clientId | number }}</td>
-        <td>{{ order.date }}</td>
+        <td>{{ order.date | date}}</td>
         <td>{{ order.direction }}</td>
-        <td><a href="##" [ngbPopover]="productsContent" popoverTitle="Product's Detail">{{ order.products.length }}</a></td>
+        <td>{{ order.total }}</td>
+        <td>{{ order.confirmed ? 'Yes' : 'No' }}</td>
+        <td><a href="##" [ngbPopover]="productsContent" popoverTitle="Product's Detail" (click)="getOrderProductsFromServer(order)">Info</a></td>
         <ng-template #productsContent>
           <product-list [products]="order.products"></product-list>
+        </ng-template>
+        <td><a href="##" [ngbPopover]="logisticContent" popoverTitle="Logistic's Detail" (click)="getOrderLogisticFromServer(order)">Info</a></td>
+        <ng-template #logisticContent>
+          <logistic-list [logistic]="order.logistic"></logistic-list>
         </ng-template>
       </tr>
       </tbody>

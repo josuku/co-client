@@ -8,6 +8,8 @@ import { ProductListComponent } from '../product-components/product-list/product
 import { OrderListComponent } from './order-list/order-list.component';
 import { ProductComponentsModule } from '../product-components/product-components.module';
 import { ProductFormComponent } from '../product-components/product-form/product-form.component';
+import { LogisticComponentsModule } from '../logistic-components/logistic-components.module';
+import { LogisticListComponent } from '../logistic-components/logistic-list/logistic-list.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { ProductFormComponent } from '../product-components/product-form/product
     CommonModule,
     FormsModule,
     NgbModule,
-    ProductComponentsModule
+    ProductComponentsModule,
+    LogisticComponentsModule
   ],
   exports: [
     OrderFormComponent,
     OrderListComponent,
     ProductFormComponent,
-    ProductListComponent
+    ProductListComponent,
+    LogisticListComponent
   ],
   providers: []
 })

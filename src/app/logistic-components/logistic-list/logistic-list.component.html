@@ -1,0 +1,14 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">OrderId</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let log of logistic; index as i">
+      <td scope="row">{{ log.id | number }}</td>
+      <td>{{ log.orderId | number }}</td>
+    </tr>
+    </tbody>
+  </table>
